@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class ColorChangeOnCollision : MonoBehaviour
 {
+    [SerializeField] MeshRenderer meshRenderer; //The meshrenderer to modify
 
-    [SerializeField] MeshRenderer meshRenderer;
-
-    // Start is called before the first frame update
-    void Start()
+    //Changes color
+    public void ChangeColor()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-  public void ChangeColor()
-    {
+        //Sets meshrenderer.mater.color to a random color
         meshRenderer.material.color = Random.ColorHSV();
     }
 }

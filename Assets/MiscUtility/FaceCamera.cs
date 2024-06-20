@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    [SerializeField] Transform cameraToFace;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform cameraToFace; //What camera to face
 
     // Update is called once per frame
     void Update()
     {
+        //Make this object face the camera using look at function
         transform.LookAt(cameraToFace);
     }
 }

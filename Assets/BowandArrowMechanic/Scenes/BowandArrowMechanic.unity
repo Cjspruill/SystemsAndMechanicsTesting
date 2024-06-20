@@ -3190,6 +3190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 568322981245715014, guid: e6315c18257de1847a536c857904fb76, type: 3}
+      propertyPath: arrowReloadSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5918307245557924063, guid: e6315c18257de1847a536c857904fb76, type: 3}
       propertyPath: m_Mesh
       value: 

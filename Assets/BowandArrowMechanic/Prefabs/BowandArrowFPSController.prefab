@@ -1023,6 +1023,7 @@ MonoBehaviour:
   arrowThrowForce: 25
   arrowCount: 20
   newArrow: {fileID: 0}
+  arrowReloadSpeed: 2
 --- !u!1 &7589571672582704109
 GameObject:
   m_ObjectHideFlags: 0
