@@ -18,6 +18,9 @@ public class SystemsTestingMenuController : MonoBehaviour
     [SerializeField] GameObject mainMenuPanel;  //Main menu panel reference
     [SerializeField] TextMeshProUGUI levelToLoadText;   //Level to load text reference
     [SerializeField] FirstPersonController firstPersonController;   //First person controller reference. Will not always have a value, depends on scene. Turns off mouse look so it doesnt conflict
+
+    [SerializeField] GameObject newCanvas;  //A reference to any canvas in a level that uses them. if it is not null, we use it in the update to keep the mouse from clicking out
+
     private void Awake()
     {
         //If instance is null, set instance to this
@@ -84,6 +87,12 @@ public class SystemsTestingMenuController : MonoBehaviour
 
         //If the main menu panel is active, set cursor lock to none, and set cursor to visable
         if (mainMenuPanel.activeInHierarchy)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        //If new canvas isnt null, set cursor lock to none and cursor to visable
+        else if (newCanvas != null)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -160,6 +169,10 @@ public class SystemsTestingMenuController : MonoBehaviour
                 Cursor.visible = true;
                 isPaused = false;
             }
+        }
+        if (scene.name == "AnimatorWithButtonInputs")
+        {
+            newCanvas = GameObject.FindGameObjectWithTag("Canvas");
         }
     }
 }

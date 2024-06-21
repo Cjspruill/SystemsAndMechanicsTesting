@@ -20486,7 +20486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4566906181941669253, guid: 0e20f3db773c887498f3b1dd411d88db, type: 3}
       propertyPath: m_Name
-      value: Canon (1)
+      value: Cannon (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6977586959259668676, guid: 0e20f3db773c887498f3b1dd411d88db, type: 3}
       propertyPath: m_Mesh
@@ -25677,7 +25677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8530036022872871678, guid: 97c9f837410731a49b9df318338fb050, type: 3}
       propertyPath: m_Name
-      value: CanonBall
+      value: CannonBall
       objectReference: {fileID: 0}
     - target: {fileID: 8530036022872871678, guid: 97c9f837410731a49b9df318338fb050, type: 3}
       propertyPath: m_IsActive
@@ -25754,7 +25754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4566906181941669253, guid: 0e20f3db773c887498f3b1dd411d88db, type: 3}
       propertyPath: m_Name
-      value: Canon
+      value: Cannon
       objectReference: {fileID: 0}
     - target: {fileID: 6977586959259668676, guid: 0e20f3db773c887498f3b1dd411d88db, type: 3}
       propertyPath: m_Mesh

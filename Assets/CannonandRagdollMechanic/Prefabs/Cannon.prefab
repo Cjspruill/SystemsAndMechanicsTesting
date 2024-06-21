@@ -911,7 +911,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4350
+  m_VersionIndex: 4353
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1028,9 +1028,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59a40a5334b200409aeef37e918ae6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canonBarrelOutLocation: {fileID: 4583698791943555115}
-  canonBallPrefab: {fileID: 8530036022872871678, guid: 97c9f837410731a49b9df318338fb050, type: 3}
-  canonBallFirePower: 25
+  cannonBarrelOutLocation: {fileID: 4583698791943555115}
+  cannonBallPrefab: {fileID: 8530036022872871678, guid: 97c9f837410731a49b9df318338fb050, type: 3}
+  cannonBallFirePower: 20
   fuseTime: 1
   isInTrigger: 0
   muzzleFlash: {fileID: 7736014216769657679}

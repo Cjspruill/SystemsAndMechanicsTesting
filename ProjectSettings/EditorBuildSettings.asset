@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/SystemsTestingSceneLoader/Scenes/SystemsTestingMainMenu.unity
     guid: a275cfb352c8d4f41a7b761f7d56f22b
   - enabled: 1
+    path: Assets/AnimatorWithButtonInputs/Scenes/AnimatorWithButtonInputs.unity
+    guid: 802d8752818fc6b4cbd7cd9159d406ae
+  - enabled: 1
     path: Assets/BoomerangMechanic/Scenes/BoomerangMechanic.unity
     guid: 972c805d9fb992743b82ca4236da257d
   - enabled: 1
@@ -21,7 +24,7 @@ EditorBuildSettings:
     path: Assets/BowandArrowMechanic/Scenes/BowandArrowMechanicVersion2.unity
     guid: f0f7ae00ad318bc4f9bdf4c4111b5216
   - enabled: 1
-    path: Assets/CanonandRagdollMechanic/Scenes/CanonandRagdollMechanic.unity
+    path: Assets/CannonandRagdollMechanic/Scenes/CannonandRagdollMechanic.unity
     guid: cfeaf5be1159c6b49b80f9debb037fe8
   - enabled: 1
     path: Assets/HealthSystem/Scenes/HealthSystem.unity
@@ -47,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ColorRandomizerOnStartMechanic/Scenes/RandomizeColorOnStart.unity
     guid: 93e39a7c9b833734aa1b435fd109159d
+  - enabled: 1
+    path: Assets/ProjectileWeapon/Scenes/ProjectileWeapon.unity
+    guid: 65a29042f52728249ac52ef6938049ee
   m_configObjects: {}

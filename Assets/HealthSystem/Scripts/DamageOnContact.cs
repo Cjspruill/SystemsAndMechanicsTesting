@@ -19,7 +19,7 @@ public class DamageOnContact : MonoBehaviour
         //Check in parent for health component if above is false
         else if(other.GetComponentInParent<Health>()!=null && !hasDoneDamage)
         {
-            other.GetComponent<Health>().TakeDamage(damage);
+            other.GetComponentInParent<Health>().TakeDamage(damage);
             hasDoneDamage = true;
         }
     }
