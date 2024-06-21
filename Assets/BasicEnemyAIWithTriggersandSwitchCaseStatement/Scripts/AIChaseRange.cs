@@ -6,6 +6,7 @@ public class AIChaseRange : MonoBehaviour
 {
     [SerializeField] AISwitchCase aISwitchCase; //Reference to aiswitch case which should be at parent level
     [SerializeField] AIShieldHolder aIShieldHolder; //Reference to ai shild holder which should be at parent level
+
     //On trigger enter check for player and pass it to the ai switch case if not null, switch enemy state to chase
     private void OnTriggerEnter(Collider other)
     {
