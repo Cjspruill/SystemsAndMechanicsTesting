@@ -16,6 +16,12 @@ public class DamageOnContact : MonoBehaviour
             other.GetComponent<Health>().TakeDamage(damage);
             hasDoneDamage = true;
         }
+        //Check in parent for health component if above is false
+        else if(other.GetComponentInParent<Health>()!=null && !hasDoneDamage)
+        {
+            other.GetComponent<Health>().TakeDamage(damage);
+            hasDoneDamage = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,6 +33,12 @@ public class DamageOnContact : MonoBehaviour
             if (collision.collider.GetComponent<Health>() != null &&!hasDoneDamage)
             {
                 collision.collider.GetComponent<Health>().TakeDamage(damage);
+                hasDoneDamage = true;
+            }
+            //Check if health in parent is not null if above is
+            else if (collision.collider.GetComponentInParent<Health>() != null && !hasDoneDamage)
+            {
+                collision.collider.GetComponentInParent<Health>().TakeDamage(damage);
                 hasDoneDamage = true;
             }
         }

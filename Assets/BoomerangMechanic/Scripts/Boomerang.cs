@@ -26,8 +26,7 @@ public class Boomerang : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //If we press right mouse down
+        //If we press left mouse down
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             //If isthrown or isreturning is true, go away, else check distance
@@ -62,7 +61,7 @@ public class Boomerang : MonoBehaviour
                     healthObjectHit = null;
                 }
 
-                //Reset both throw variables
+                //Isthrown to false, and isreturning to true
                 isThrown = false;
                 isReturning = true;
             }

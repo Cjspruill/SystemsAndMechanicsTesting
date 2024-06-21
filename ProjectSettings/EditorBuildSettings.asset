@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/BoomerangMechanic/Scenes/BoomerangMechanic.unity
     guid: 972c805d9fb992743b82ca4236da257d
   - enabled: 1
+    path: Assets/BoomerangMechanic/Scenes/BoomerangMechanicVersion2.unity
+    guid: 2b79ff5030e48b6408f9a96a0402b6ed
+  - enabled: 1
     path: Assets/BowandArrowMechanic/Scenes/BowandArrowMechanic.unity
     guid: 3723dfa2826c9af4a865feb4eeeb81d8
   - enabled: 1
@@ -41,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ShieldMechanic/Scenes/AIShieldHolder.unity
     guid: 29b0d47acc0c6ee4f877ef9b6cf52767
+  - enabled: 1
+    path: Assets/ColorRandomizerOnStartMechanic/Scenes/RandomizeColorOnStart.unity
+    guid: 93e39a7c9b833734aa1b435fd109159d
   m_configObjects: {}

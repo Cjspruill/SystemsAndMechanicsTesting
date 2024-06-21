@@ -11,6 +11,7 @@ public class BowVersion2 : MonoBehaviour
     [SerializeField] GameObject newArrow;   //New arrow reference, used to do things with the arrow before it is fired.
     [SerializeField] float arrowReloadSpeed;    //How fast can we reload?
     public int ArrowCount { get => arrowCount; set => arrowCount = value; } //Property for arrow count
+    public GameObject NewArrow { get => newArrow; set => newArrow = value; } //Property for new arrow
 
     [SerializeField] Transform bowUpPosition;   //Bow hold up position/Fire position
     [SerializeField] Transform bowDownPosition; //Bow hold down position/Non fire position
@@ -69,31 +70,30 @@ public class BowVersion2 : MonoBehaviour
     }
 
     //Places a new arrow
-    void PlaceNewArrow()
+    public void PlaceNewArrow()
     {
         //Decrement arrow count
         ArrowCount--;
 
         //Create a new arrow and parent it to the arrow location
-        newArrow = Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation);
-        newArrow.transform.parent = arrowLocation;
+        NewArrow = Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation);
+        NewArrow.transform.parent = arrowLocation;
     }
 
     //Fires our currently loaded arrow
     void FireArrow()
     {
         //If new arrow is null go away
-        if (newArrow == null) return;
+        if (NewArrow == null) return;
 
         //Turn on the boxcollidertrigger of the arrow, and set the rigidbody iskinematic to isfalse
-        newArrow.GetComponent<Arrow>().boxColliderTrigger.enabled = true;
-        newArrow.GetComponent<Rigidbody>().isKinematic = false;
         
-        //Add force to the rigidbody, set the parent to null and the arrow to null since we are done using it
-        newArrow.GetComponent<Rigidbody>().AddForce(arrowLocation.forward * arrowThrowForce, ForceMode.Impulse);
-        newArrow.transform.parent = null;
-        newArrow = null;
-
+        NewArrow.GetComponent<Rigidbody>().isKinematic = false;
+        
+        //Add force to the rigidbody, set the parent to null
+        NewArrow.GetComponent<Rigidbody>().AddForce(arrowLocation.forward * arrowThrowForce, ForceMode.Impulse);
+        NewArrow.transform.parent = null;
+        Invoke("EnableBoxCollider", .15f);
         //If we still have arrows, place a new arrow, wait for reload speed
         if (ArrowCount > 0)
             Invoke("PlaceNewArrow", arrowReloadSpeed);
@@ -109,5 +109,11 @@ public class BowVersion2 : MonoBehaviour
     void UnreadyBow()
     {
         bowIsReady = false;
+    }
+
+    void EnableBoxCollider()
+    {
+        NewArrow.GetComponent<Arrow>().boxColliderTrigger.enabled = true;
+        NewArrow = null;
     }
 }
