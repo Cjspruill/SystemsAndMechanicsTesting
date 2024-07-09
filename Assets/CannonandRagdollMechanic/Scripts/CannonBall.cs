@@ -15,6 +15,9 @@ public class CannonBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        if (collision.collider.CompareTag("Player")) return;
+
         //If the collider i hit has a rigidbody, set is kinematic to false
         if (collision.collider.GetComponent<Rigidbody>() != null)
         {
@@ -24,7 +27,18 @@ public class CannonBall : MonoBehaviour
             //If the collider i hit now has a ragdoll controller in the parent, set ragdoll to active
             if (collision.collider.GetComponentInParent<RagdollController>() != null)
             {
+                if (collision.collider.GetComponentInParent<Titan>() != null)
+                {
+                    if(collision.collider.GetComponentInParent<Titan>().Health <= 0)
+                    {
+                        collision.collider.GetComponentInParent<RagdollController>().SetRagdollActive();
+                    }
+                }
+                else
+                {
+
                 collision.collider.GetComponentInParent<RagdollController>().SetRagdollActive();
+                }
             }
             collision.collider.GetComponent<Rigidbody>().AddForce(transform.forward * power, ForceMode.Impulse);
         }

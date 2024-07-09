@@ -12,6 +12,11 @@ TagManager:
   - Boomerang
   - Fire
   - Canvas
+  - Brick
+  - Grenade
+  - Ignore
+  - NavPoint
+  - Inventory
   layers:
   - Default
   - TransparentFX

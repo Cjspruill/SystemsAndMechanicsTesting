@@ -8,6 +8,7 @@ public class Bird : MonoBehaviour
 
     private void Update()
     {
+        //Move it by translating it forward by speed times time.delta time
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }

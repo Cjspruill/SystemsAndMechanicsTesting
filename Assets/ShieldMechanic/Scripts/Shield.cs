@@ -13,6 +13,8 @@ public class Shield : MonoBehaviour
     [SerializeField] float blockingRotationSpeed;
     [SerializeField] bool isBlocking;
 
+    public bool IsBlocking { get => isBlocking; set => isBlocking = value; } //Property for is blocking bool
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,20 +31,20 @@ public class Shield : MonoBehaviour
         {
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            isBlocking = true;
+            IsBlocking = true;
         }
         else if(Input.GetKeyUp(KeyCode.Mouse1))
         {
-            isBlocking = false;
+            IsBlocking = false;
         }
         }
 
 
-        if (isBlocking)
+        if (IsBlocking)
         {
             RaiseShield();
         }
-        else if(!isBlocking)
+        else if(!IsBlocking)
         {
             LowerShield();
         }

@@ -10,35 +10,41 @@ public class AnimatorWithButtonInputs : MonoBehaviour
     public void WalkForward()
     {
         animator.SetInteger("Direction", 2);
-        Invoke("DisableAnimation", timeInAnimation);
+        animator.ResetTrigger("Attack");
+        StartCoroutine("DisableAnimation");
     }
 
     public void WalkBackwards()
     {
         animator.SetInteger("Direction", 1);
-        Invoke("DisableAnimation", timeInAnimation);
+        animator.ResetTrigger("Attack");
+        StartCoroutine("DisableAnimation");
     }
 
     public void StrafeLeft()
     {
         animator.SetInteger("Direction", 3);
-        Invoke("DisableAnimation", timeInAnimation);
+        animator.ResetTrigger("Attack");
+        StartCoroutine("DisableAnimation");
     }
 
     public void StrafeRight()
     {
         animator.SetInteger("Direction", 4);
-        Invoke("DisableAnimation", timeInAnimation);
+        animator.ResetTrigger("Attack");
+        StartCoroutine("DisableAnimation");
     }
 
     public void Attack()
     {
         animator.SetTrigger("Attack");
-        Invoke("DisableAnimation", timeInAnimation);
+        StartCoroutine("DisableAnimation");
     }
 
-    void DisableAnimation()
+   IEnumerator DisableAnimation()
     {
+        yield return new WaitForSeconds(timeInAnimation);
+        animator.ResetTrigger("Attack");
         animator.SetInteger("Direction", 0);
     }
 }

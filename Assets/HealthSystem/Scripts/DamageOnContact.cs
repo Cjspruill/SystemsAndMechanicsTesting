@@ -22,8 +22,17 @@ public class DamageOnContact : MonoBehaviour
             other.GetComponentInParent<Health>().TakeDamage(damage);
             hasDoneDamage = true;
         }
-    }
+        else if (other.GetComponentInParent<Titan>())
+        {
+            other.GetComponentInParent<Titan>().TakeDamage(damage);
+        }
 
+        Invoke("ResetHasDoneDamage", .15f);
+    }
+    void ResetHasDoneDamage()
+    {
+        hasDoneDamage = false;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         //If damage by collider is true
@@ -41,6 +50,12 @@ public class DamageOnContact : MonoBehaviour
                 collision.collider.GetComponentInParent<Health>().TakeDamage(damage);
                 hasDoneDamage = true;
             }
+            else if (collision.collider.GetComponentInParent<Titan>())
+            {
+                collision.collider.GetComponentInParent<Titan>().TakeDamage(damage);
+            }
+
         }
+        Invoke("ResetHasDoneDamage", .15f);
     }
 }

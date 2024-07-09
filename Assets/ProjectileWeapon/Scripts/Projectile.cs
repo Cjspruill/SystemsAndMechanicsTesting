@@ -15,13 +15,27 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //If a health component exist
-        if (collision.collider.GetComponentInParent<Health>() != null)
+        if (collision.collider.GetComponentInParent<Overshield>() != null)
         {
-            //Take damage
-            collision.collider.GetComponentInParent<Health>().TakeDamage(damage);
-            //Destroy gameobject
-            Destroy(gameObject);
+            collision.collider.GetComponentInParent<Overshield>().TakeShieldDamage(damage);
+        }
+        //If a health component exist
+        else if (collision.collider.GetComponentInParent<Health>() != null)
+        {
+            //If we find the player and he is blocking, deal half damage
+            if (collision.collider.CompareTag("Player") && collision.collider.GetComponentInParent<Shield>().IsBlocking)
+            {
+                collision.collider.GetComponentInParent<Health>().TakeDamage(damage / 2);
+                Destroy(gameObject);
+            }
+            //Else deal full damage
+            else
+            {
+                //Take damage
+                collision.collider.GetComponentInParent<Health>().TakeDamage(damage);
+                //Destroy gameobject
+                Destroy(gameObject);
+            }
         }
 
         //If a color change component exist
@@ -29,8 +43,8 @@ public class Projectile : MonoBehaviour
         {
             //Change color
             collision.collider.GetComponentInParent<ColorChangeOnCollision>().ChangeColor();
-        //Destroy gameobject
-        Destroy(gameObject);
+            //Destroy gameobject
+            Destroy(gameObject);
         }
     }
 }

@@ -2567,10 +2567,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2534336468483806191, guid: 06bd920bfa3bab14d93a582776031e11, type: 3}
-      propertyPath: arrowReloadSpeed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4242104676431690700, guid: 06bd920bfa3bab14d93a582776031e11, type: 3}
       propertyPath: m_Name
       value: BowandArrowVersion2FPSController

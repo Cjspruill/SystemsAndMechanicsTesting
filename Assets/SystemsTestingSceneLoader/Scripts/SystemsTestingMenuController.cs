@@ -17,6 +17,7 @@ public class SystemsTestingMenuController : MonoBehaviour
     [SerializeField] GameObject pausePanel; //Pause panel reference
     [SerializeField] GameObject mainMenuPanel;  //Main menu panel reference
     [SerializeField] TextMeshProUGUI levelToLoadText;   //Level to load text reference
+    [SerializeField] TextMeshProUGUI levelCountText;   //Level count text reference
     [SerializeField] FirstPersonController firstPersonController;   //First person controller reference. Will not always have a value, depends on scene. Turns off mouse look so it doesnt conflict
 
     [SerializeField] GameObject newCanvas;  //A reference to any canvas in a level that uses them. if it is not null, we use it in the update to keep the mouse from clicking out
@@ -53,6 +54,8 @@ public class SystemsTestingMenuController : MonoBehaviour
         string sceneName = System.IO.Path.GetFileNameWithoutExtension(pathToScene);
         levelToLoad = sceneName;
         levelToLoadText.text = levelToLoad;
+        int newSceneCount = SceneManager.sceneCountInBuildSettings - 1;
+        levelCountText.text = "Level Count: " +  newSceneCount;
 
         //If escape is pressed toggle paused, if you find a player with a first person controller, pause that mouse look component as well
         if (Input.GetKeyDown(KeyCode.Escape))

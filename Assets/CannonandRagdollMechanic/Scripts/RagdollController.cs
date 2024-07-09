@@ -7,12 +7,12 @@ public class RagdollController : MonoBehaviour
 
     [SerializeField] Rigidbody[] rigidbodies;   //Array of rigidbodies, set on start
     [SerializeField] Animator animator; //Animator reference
-
     // Start is called before the first frame update
     void Start()
     {
         //Set rigidbodies to get components in children, then set ragdoll inactive so it doesnt interfere with our capsule collider
-        rigidbodies = GetComponentsInChildren<Rigidbody>();
+      //  rigidbodies = GetComponentsInChildren<Rigidbody>();
+
         SetRagdollInactive();
     }
 
